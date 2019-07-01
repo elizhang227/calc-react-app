@@ -1,0 +1,10 @@
+.Display {
+    display: flex;
+    justify-content: center;
+}
+
+.Display input {
+    width: 396px;
+    height: 40px;
+    font-size: 30px;
+}

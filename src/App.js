@@ -4,6 +4,7 @@ import Calculator from './calculator.js';
 
 import './calculator.css';
 import './buttons.css';
+import './display.css';
 
 class App extends Component {
   render() {
