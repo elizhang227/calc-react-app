@@ -2,24 +2,34 @@ import React, { Component } from 'react';
 
 class Buttons extends Component {
     state = {
-        number: 0
+        number: 0,
+        test: ''
     }
 
     handleClick = async (e) => {
         e.preventDefault();
 
-        let num = e.target.innerHTML
+        let num = this.state.test + e.target.innerHTML
+        // num += e.target.innerHTML
         console.log('this is num', num)
         this.setState({
-            number: num
+            number: num,
+            test: num
         })
     }
 
+    clearScreen = async (e) => {
+        e.preventDefault();
+
+        
+    }
+
     render() {
+        const { number } = this.state;
         return (
             <div>
                 <div className='Display'>
-                    <p>NUMBERS</p>
+                    <p>{number}</p>
                 </div>
                 <div className='Operator-Buttons'>
                     <button onClick={(e) => this.handleClick(e)}>+</button>
