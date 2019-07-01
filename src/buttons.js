@@ -21,7 +21,10 @@ class Buttons extends Component {
     clearScreen = async (e) => {
         e.preventDefault();
 
-        
+        this.setState({
+            number: 0,
+            test: ''
+        })
     }
 
     render() {
@@ -55,7 +58,7 @@ class Buttons extends Component {
                             <button onClick={(e) => this.handleClick(e)}>9</button>
                             <button onClick={(e) => this.handleClick(e)}>6</button>
                             <button onClick={(e) => this.handleClick(e)}>3</button>
-                            <button>C</button>
+                            <button onClick={(e) => this.clearScreen(e)}>C</button>
                         </div>
                         <div className='Equal-Button'>
                             <button>=</button>
