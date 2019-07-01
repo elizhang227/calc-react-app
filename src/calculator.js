@@ -5,12 +5,12 @@ import Display from './display';
 
 class Calculator extends Component {
 
-
+    
     render() {
         return (
             <div className='Calculator'>
                 <h1>Calculator</h1>
-                <Display />
+                {/* <Display /> */}
                 <Buttons />
             </div>
         )

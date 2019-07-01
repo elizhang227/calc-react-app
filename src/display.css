@@ -3,8 +3,12 @@
     justify-content: center;
 }
 
-.Display input {
+.Display p {
+    display: flex;
+    justify-content: flex-end;
     width: 396px;
     height: 40px;
     font-size: 30px;
+    margin: 10px 0;
+    border: 2px solid red;
 }
