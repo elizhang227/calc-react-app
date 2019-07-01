@@ -34,6 +34,7 @@ class Buttons extends Component {
         if (currentString[0] === '-') {
             //currentString = currentString.split('-').join('')
             numberStringArray = currentString.split(/\+|\*|\//g);
+            //numberStringArray = currentString.split(/\+|\*|\-|\//g);
         } else {
             numberStringArray = currentString.split(/\+|\-|\*|\//g);
         }
