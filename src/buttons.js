@@ -30,28 +30,39 @@ class Buttons extends Component {
         e.preventDefault();
 
         let currentString = this.state.test;
+        // let numberStringArray;
+        // if (currentString[0] === '-') {
+        //     //currentString = currentString.split('-').join('')
+        //     numberStringArray = currentString.split(/\+|\*|\//g);
+        //     //numberStringArray = currentString.split(/\+|\*|\-|\//g);
+        // } else {
+        //     numberStringArray = currentString.split(/\+|\-|\*|\//g);
+        // }
+        // console.log(numberStringArray)
         let numberStringArray;
         if (currentString[0] === '-') {
-            //currentString = currentString.split('-').join('')
-            numberStringArray = currentString.split(/\+|\*|\//g);
-            //numberStringArray = currentString.split(/\+|\*|\-|\//g);
-        } else {
             numberStringArray = currentString.split(/\+|\-|\*|\//g);
+            numberStringArray[1] = '-' + numberStringArray[1]
+            console.log(numberStringArray)
         }
-        let operatorsArray;
-        if (currentString[0] === '-') {
-            operatorsArray = currentString.replace(/[0-9]|\-|\./g, "").split("");
-        } else {
-            operatorsArray = currentString.replace(/[0-9]|\./g, "").split("");
-        }
-        console.log('yooo', numberStringArray, operatorsArray)
+        // let operatorsArray;
+        // if (currentString[0] === '-') {
+        //     operatorsArray = currentString.replace(/[0-9]|\-|\./g, "").split("");
+        // } else {
+        //     operatorsArray = currentString.replace(/[0-9]|\./g, "").split("");
+        // }
+        // console.log('yooo', numberStringArray, operatorsArray)
 
         let numbersArray = [];
         numberStringArray.forEach(function(number) {
             numbersArray.push(Number(number));
         });
-
         console.log('number array', numbersArray);
+
+        let operatorsArray = currentString.replace(/[0-9]|\./g, "").split("");
+        console.log('before', operatorsArray)
+        operatorsArray = operatorsArray.slice(1)
+        console.log('after', operatorsArray)
 
         let multiply = operatorsArray.indexOf("*");
         while (multiply != -1) {
